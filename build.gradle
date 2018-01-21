@@ -30,7 +30,7 @@ dependencies {
     //compile 'org.springframework.boot:spring-boot-starter-security'
 
     // https://mvnrepository.com/artifact/org.postgresql/postgresql
-    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.0'
 
     // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp
     compile group: 'org.apache.tomcat', name: 'tomcat-dbcp', version: '9.0.2'

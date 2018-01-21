@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class FormulaServiceImpl implements FormulaService {
-    @Autowired FormulaDao formulaDao;
+    @Autowired private FormulaDao formulaDao;
 
     @Override
     public Formula findById(Long id) {
@@ -18,36 +18,12 @@ public class FormulaServiceImpl implements FormulaService {
 
     @Override
     public List<Formula> findAll() {
-        return null;
+        return  formulaDao.findAll();
     }
 
     @Override
-    public List<Formula> findAllByCategory() {
-        return null;
+    public List<Formula> findAllByCategory(String categoryName) {
+        return  formulaDao.findAllByCategory(categoryName);
     }
 
-    @Override
-    public boolean add(Formula formula) {
-        return false;
-    }
-
-    @Override
-    public boolean update(Formula formula) {
-        return false;
-    }
-
-    @Override
-    public boolean delete(Long id) {
-        return false;
-    }
-
-    @Override
-    public boolean addFavorite(Long id) {
-        return false;
-    }
-
-    @Override
-    public boolean deleteFavorite(Long id) {
-        return false;
-    }
 }
