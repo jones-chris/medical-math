@@ -8,6 +8,7 @@ public class Formula {
     private String name;
     private String[] parameters;
     private Category category;
+    private String abbreviation;
 
     public Formula() {}
 

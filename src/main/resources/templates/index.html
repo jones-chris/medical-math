@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Medical Math</title>
+</head>
+<body>
+
+    <div th:each="formula : ${formulas}">
+        <input th:each="parameter : ${formula.parameters}" type="text" th:id="|${formula.name} - ${parameter}|" th:name="|${formula.name} - ${parameter}|"/>
+        <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
+    </div>
+
+</body>
+</html>
