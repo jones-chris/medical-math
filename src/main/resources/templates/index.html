@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
+
     <title>Medical Math</title>
+
+    <link rel="stylesheet" href="css/darkly.css"/>
 </head>
 <body>
 
-    <div th:each="formula : ${formulas}">
-        <input th:each="parameter : ${formula.parameters}" type="text" th:id="|${formula.name} - ${parameter}|" th:name="|${formula.name} - ${parameter}|"/>
+    <div class="form-group" th:each="formula : ${formulas}">
+        <p1 th:text="${formula.name}"></p1>
+
+        <br/>
+
+        <input class="form-control" th:each="parameter : ${formula.parameters}" type="text" th:id="|${formula.name} - ${parameter}|" th:name="|${formula.name} - ${parameter}|" th:placeholder="${parameter}"/>
+
         <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
+
+        <label class="col-form-label" th:for="|${formula.name}-result|">Result:</label>
+        <input class="form-control" type="text" th:id="|${formula.name}-result|"/>
+
     </div>
 
     <script th:src="@{/js/formulas.js}" type="text/javascript"></script>
