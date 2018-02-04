@@ -15,6 +15,8 @@ public class FormulaRowMapper implements RowMapper<Formula> {
         Formula formula = new Formula();
         formula.setId(rs.getLong("formula_id"));
         formula.setName(rs.getString("formula_name"));
+        formula.setParentId(rs.getLong("formula_parent_id"));
+        formula.setHasChildren(rs.getBoolean("formula_has_children"));
 
         String[] formulaParamsList = rs.getString("formula_parameters").split(",");
         formula.setParameters(formulaParamsList);

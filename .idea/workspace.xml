@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcce6c8-927d-4a91-a993-5223e8ffdaaf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/darkly.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/drill_arrow.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/dao/FormulaDao.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/dao/FormulaDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/dao/FormulaDaoImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/dao/FormulaDaoImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/cj/model/Formula.class" afterPath="$PROJECT_DIR$/build/classes/main/com/cj/model/Formula.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java" afterPath="$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java" afterPath="$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
     </list>
     <ignored path="medical-math.iws" />
@@ -91,8 +104,8 @@
       <file leaf-file-name="FormulaRowMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state relative-caret-position="323">
+              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -100,31 +113,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Formula.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#783#784#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
+                <element signature="e#1361#1362#0" expanded="true" />
+                <element signature="e#1392#1393#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1475#1476#0" expanded="true" />
+                <element signature="e#1540#1541#0" expanded="true" />
+                <element signature="e#1590#1591#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="darkly.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/darkly.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="2039" column="2" selection-start-line="2039" selection-start-column="2" selection-end-line="2039" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formulas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/formulas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,46 +148,34 @@
       <file leaf-file-name="FormulaController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="63">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormulaDaoImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FormulaServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#414#415#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#1109#1110#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormulaDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="250">
+              <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Formula.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding>
-                <element signature="e#443#444#0" expanded="false" />
-                <element signature="e#468#469#0" expanded="false" />
-                <element signature="e#502#503#0" expanded="false" />
-                <element signature="e#530#531#0" expanded="false" />
-                <element signature="e#561#562#0" expanded="false" />
-                <element signature="e#588#589#0" expanded="false" />
-                <element signature="e#628#629#0" expanded="false" />
-                <element signature="e#660#661#0" expanded="false" />
-                <element signature="e#699#700#0" expanded="false" />
-                <element signature="e#732#733#0" expanded="false" />
-                <element signature="e#786#787#0" expanded="false" />
-                <element signature="e#830#831#0" expanded="false" />
-                <element signature="e#867#868#0" expanded="false" />
-                <element signature="e#898#899#0" expanded="false" />
-                <element signature="e#948#949#0" expanded="false" />
-                <element signature="e#988#989#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -595,27 +598,27 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/model/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/config/DataConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/service/FormulaService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/CategoryDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/mappers/CategoryRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/service/CategoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/service/CategoryServiceImpl.java" />
         <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.5.RELEASE/80299e3f80e8c6d5c076db2ba6adf44a4b52f578/spring-core-4.3.5.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/Application.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/CategoryDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/asdf.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/darkly.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/formulas.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cj/dao/CategoryDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/asdf.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/formulas.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/darkly.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -657,7 +660,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -730,11 +733,41 @@
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="cj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical-math" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical-math" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,40 +789,22 @@
               <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
+              <option name="myItemId" value="cj" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="medical-math" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="medical-math" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -798,6 +813,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project-12-Recipe-Site" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\chris&amp;amy\IdeaProjects\medical-math\src\main\resources\static\images" />
+    </key>
   </component>
   <component name="RunManager" selected="Gradle.medical-math [bootRun]">
     <configuration default="false" name="medical-math [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -1103,7 +1123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516512634435</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added css bootstrap file and experimented with index.html look.">
+      <created>1516595189224</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1516595189224</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1116,17 +1143,17 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31690928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31690928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.116204694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14658849" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17803837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1130064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51287794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.518477" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1152,7 +1179,8 @@
     <MESSAGE value="Successfully queried on database and returned objects." />
     <MESSAGE value="Tested index page with one formula." />
     <MESSAGE value="Added formulas.js and successfully tested calling JS from HTML that was rendered by Thymeleaf." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added formulas.js and successfully tested calling JS from HTML that was rendered by Thymeleaf." />
+    <MESSAGE value="Added css bootstrap file and experimented with index.html look." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added css bootstrap file and experimented with index.html look." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1163,31 +1191,46 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="11" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="childFormula" />
+        <watch expression="parentFormulas.get(0).childFormulas.get(0)" />
+        <watch expression="parentFormulas" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/config/DataConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="62" column="62" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1320,13 +1363,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" selection-start-line="8" selection-start-column="4" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/mappers/CategoryRowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1404,31 +1440,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="89" selection-start-line="0" selection-start-column="89" selection-end-line="0" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.5.RELEASE/80299e3f80e8c6d5c076db2ba6adf44a4b52f578/spring-core-4.3.5.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1439,78 +1454,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/asdf.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/darkly.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="34663">
+          <caret line="2039" column="2" selection-start-line="2039" selection-start-column="2" selection-end-line="2039" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/formulas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/drill_arrow.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#443#444#0" expanded="false" />
-            <element signature="e#468#469#0" expanded="false" />
-            <element signature="e#502#503#0" expanded="false" />
-            <element signature="e#530#531#0" expanded="false" />
-            <element signature="e#561#562#0" expanded="false" />
-            <element signature="e#588#589#0" expanded="false" />
-            <element signature="e#628#629#0" expanded="false" />
-            <element signature="e#660#661#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#786#787#0" expanded="false" />
-            <element signature="e#830#831#0" expanded="false" />
-            <element signature="e#867#868#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-            <element signature="e#948#949#0" expanded="false" />
-            <element signature="e#988#989#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        <state relative-caret-position="323">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/asdf.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/formulas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/darkly.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="2039" column="2" selection-start-line="2039" selection-start-column="2" selection-end-line="2039" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="74" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/model/Formula.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1392#1393#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="e#1590#1591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.5.RELEASE/880796aaf6acaa40144c435d41a1b2ea509fa4ae/spring-web-4.3.5.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/service/FormulaServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#1109#1110#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="105" selection-start-line="0" selection-start-column="105" selection-end-line="0" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/controller/FormulaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/dao/FormulaDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
           <folding />
         </state>
       </provider>

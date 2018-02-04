@@ -30,4 +30,9 @@ public class FormulaController {
         modelMap.put("categories", categories);
         return "index";
     }
+
+    /*@RequestMapping(value = "/child-formula", method = RequestMethod.GET)
+    public Formula getChildFormula(ModelMap modelMap) {
+
+    }*/
 }
