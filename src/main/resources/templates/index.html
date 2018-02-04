@@ -10,6 +10,16 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a th:href="${user != null ? '/profile' : '/login'}" th:text="${user != null ? user.username : 'log in'}">
+            Chandra S.
+        </a>
+        &bull;
+        <a href="/logout">
+            logout
+        </a>
+    </nav>
+
     <div class="form-group" th:each="formula : ${formulas}">
         <p th:id="${formula.id}" th:text="${formula.name}"></p>
 
@@ -31,7 +41,7 @@
                    th:name="|${formula.name} - ${childFormula.name}|"
                    th:placeholder="${childFormula.name}"/>
 
-            <img th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}" height="60px"/>
+            <img th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}" height="30px" th:onclick="|getChildFormula(${childFormula.id})|"/>
         </th:block>
 
         <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
@@ -41,7 +51,9 @@
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script th:src="@{/js/formulas.js}" type="text/javascript"></script>
+    <script th:src="@{/js/ajax.js}" type="text/javascript"></script>
 
 </body>
 </html>
