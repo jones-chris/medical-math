@@ -16,13 +16,22 @@
         <br/>
 
         <form action=""></form>
-        <th:block th:each="parameter : ${formula.parameters}">
+        <!--<th:block th:each="parameter : ${formula.parameters}">
             <input class="form-control" type="text"
                    th:id="${formula.id}"
                    th:name="|${formula.name} - ${parameter}|"
                    th:placeholder="${parameter}"/>
 
-            <img th:id="|${parameter}|" th:src="@{/images/chefbot.svg}" height="60px"/>
+            <img th:id="|${parameter}|" th:src="@{/images/drill_arrow.svg}" height="60px"/>
+        </th:block>-->
+
+        <th:block th:each="childFormula : ${formula.childFormulas}">
+            <input class="form-control" type="text"
+                   th:id="${childFormula.id}"
+                   th:name="|${formula.name} - ${childFormula.name}|"
+                   th:placeholder="${childFormula.name}"/>
+
+            <img th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}" height="60px"/>
         </th:block>
 
         <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>

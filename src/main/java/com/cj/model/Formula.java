@@ -2,6 +2,7 @@ package com.cj.model;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Formula {
@@ -86,5 +87,30 @@ public class Formula {
 
     public void setHasChildren(boolean hasChildren) {
         this.hasChildren = hasChildren;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Formula formula = (Formula) o;
+
+        if (name != null ? !name.equals(formula.name) : formula.name != null) return false;
+        return parentId != null ? parentId.equals(formula.parentId) : formula.parentId == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + Arrays.hashCode(parameters);
+        result = 31 * result + (childFormulas != null ? childFormulas.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
+        result = 31 * result + (abbreviation != null ? abbreviation.hashCode() : 0);
+        result = 31 * result + (parentId != null ? parentId.hashCode() : 0);
+        result = 31 * result + (hasChildren ? 1 : 0);
+        return result;
     }
 }

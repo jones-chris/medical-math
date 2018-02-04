@@ -1,8 +1,8 @@
 // Formula function calls that can will be the callback methods for the webpage's views.
 
 function BodyMassIndex() {
-    kg = document.getElementById('Body Mass Index - kg').value;
-    m2 = document.getElementById('Body Mass Index - m2').value;
+    kg = document.getElementsByName('Body Mass Index - kg')[0].value;
+    m2 = document.getElementsByName('Body Mass Index - m2')[0].value;
 
     console.log(kg);
     console.log(m2);
