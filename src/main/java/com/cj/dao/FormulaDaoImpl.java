@@ -1,13 +1,18 @@
 package com.cj.dao;
 
 
+import com.cj.exceptions.SqlResultCountException;
 import com.cj.mappers.FormulaRowMapper;
 import com.cj.model.Formula;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCallback;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -72,7 +77,7 @@ public class FormulaDaoImpl implements FormulaDao {
         sql.append("     medical_math.category c ");
         sql.append("where f.id = fc.formula_id ");
         sql.append("  and c.id = fc.category_id ");
-        sql.append("  and c.name = :categoryName; ");
+        sql.append("  and c.name = ?; ");
 
         jdbcTemplate = new JdbcTemplate(dataSource, true);
 
@@ -138,6 +143,73 @@ public class FormulaDaoImpl implements FormulaDao {
         jdbcTemplate = new JdbcTemplate(dataSource, true);
 
         return jdbcTemplate.query(sql.toString(), new FormulaRowMapper());
+    }
+
+    public List<Formula> findAllChildFormulasJSON(Long id) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("select row_to_json(t) ");
+        sql.append("from (SELECT f.id AS formula_id, ");
+        sql.append("             f.name AS formula_name, ");
+        sql.append("             f.parameters AS formula_parameters, ");
+        sql.append("             f.parent_id AS formula_parent_id, ");
+        sql.append("             f.has_children AS formula_has_children, ");
+        sql.append("             c.id AS category_id, ");
+        sql.append("             c.name AS category_name ");
+        sql.append("FROM medical_math.formula f, ");
+        sql.append("     medical_math.category c, ");
+        sql.append("     medical_math.formula_category fc ");
+        sql.append("WHERE f.id = fc.formula_id ");
+        sql.append("  AND c.id = fc.category_id ");
+        sql.append("  AND f.parent_id = ?) t;");
+
+        jdbcTemplate = new JdbcTemplate(dataSource, true);
+
+        return jdbcTemplate.queryForList(sql.toString(), new Object[] {id}, Formula.class);
+    }
+
+    @Override
+    public Formula findByNameAndParentId(String name, Long parentId) throws SqlResultCountException {
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT f.id AS formula_id, ");
+        sql.append("       f.name AS formula_name, ");
+        sql.append("       f.parameters AS formula_parameters, ");
+        sql.append("       f.parent_id AS formula_parent_id, ");
+        sql.append("       f.has_children AS formula_has_children,");
+        sql.append("       c.id AS category_id,");
+        sql.append("       c.name AS category_name ");
+        sql.append("FROM medical_math.formula f,");
+        sql.append("     medical_math.category c,");
+        sql.append("     medical_math.formula_category fc ");
+        sql.append("WHERE f.id = fc.formula_id ");
+        sql.append("  AND c.id = fc.category_id ");
+        sql.append("  AND f.id = ? ");
+        sql.append("  AND f.name = ?;");
+
+        jdbcTemplate = new JdbcTemplate(dataSource, true);
+
+        /*return jdbcTemplate.execute(sql.toString(), new PreparedStatementCallback<Object>() {
+
+            @Override
+            public Object doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
+                ps.setLong(1, parentId);
+                ps.setString(2, name);
+
+                return ps.execute();
+            }
+        });*/
+
+        List<Formula> results = jdbcTemplate.query(sql.toString(), new Object[] {parentId, name}, new FormulaRowMapper());
+
+        if (results != null) {
+            if (results.size() == 1) {
+                return results.get(0);
+            } else {
+                throw new SqlResultCountException(String.format("Expected 1 result, but query found %s results", results.size()));
+            }
+        } else {
+            throw new SqlResultCountException(String.format("Expected 1 result, but query found %s results", results.size()));
+        }
+        //return jdbcTemplate.queryForObject(sql.toString(), new Object[] { parentId, name }, Object.class);
     }
 
 }
