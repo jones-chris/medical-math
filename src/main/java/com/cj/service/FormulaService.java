@@ -10,5 +10,5 @@ public interface FormulaService {
     Formula findById(Long id);
     List<Formula> findAll();
     List<Formula> findAllByCategory(String categoryName);
-    String findAllChildFormulasJSON(String name, Long id) throws SqlResultCountException;
+    Formula findAllChildFormulasJSON(String name, Long id) throws SqlResultCountException;
 }

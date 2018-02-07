@@ -47,11 +47,12 @@ public class FormulaServiceImpl implements FormulaService {
     }
 
     @Override
-    public String findAllChildFormulasJSON(String name, Long parentId) throws SqlResultCountException {
+    public Formula findAllChildFormulasJSON(String name, Long parentId) throws SqlResultCountException {
         try {
             Formula formula = formulaDao.findByNameAndParentId(name, parentId);
-            Gson gson = new Gson();
-            return gson.toJson(formula);
+            //Gson gson = new Gson();
+            //return gson.toJson(formula);
+            return formula;
         } catch (SqlResultCountException ex) {
             throw ex;
         }
