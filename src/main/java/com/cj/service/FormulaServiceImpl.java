@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -47,11 +49,14 @@ public class FormulaServiceImpl implements FormulaService {
     }
 
     @Override
-    public Formula findAllChildFormulasJSON(String name, Long parentId) throws SqlResultCountException {
+    public Formula findAllChildFormulasJSON(Long id) throws SqlResultCountException {
         try {
-            Formula formula = formulaDao.findByNameAndParentId(name, parentId);
-            //Gson gson = new Gson();
-            //return gson.toJson(formula);
+            Formula formula = formulaDao.findByNameAndParentId(id);
+
+            List<Formula> childFormulas = formulaDao.findAllChildFormulas(formula.getId());
+            Collections.sort(childFormulas);
+            formula.setChildFormulas(childFormulas);
+
             return formula;
         } catch (SqlResultCountException ex) {
             throw ex;

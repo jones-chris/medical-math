@@ -14,5 +14,5 @@ public interface FormulaDao {
     List<Formula> findAllChildFormulas(Long id);
     List<Formula> findAllParentFormulas();
     List<Formula> findAllChildFormulasJSON(Long id);
-    Formula findByNameAndParentId(String name, Long parentId) throws SqlResultCountException;
+    Formula findByNameAndParentId(Long id) throws SqlResultCountException;
 }

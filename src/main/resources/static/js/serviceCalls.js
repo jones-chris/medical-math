@@ -3,24 +3,30 @@ function getChildFormula(id) {
 
 
     $.ajax({
-      url: "http://localhost:8080/childFormula/5/Volume",
-      //data: data,
+      url: "http://localhost:8080/childFormula",
+      data: {
+        id: id,
+        //name: 'Volume'
+      },
       success: function(data) {
         //alert(data);
 
-        var parentFormulaName = document.getElementById(id).parentElement.getElementsByTagName('p')[0].innerHTML;
+        //var parentFormulaName = document.getElementById(id).parentElement.getElementsByTagName('p')[0].innerHTML;
 
-        var html = '<h1>';
-        html += '<input class="form-control" type="text" ';
-        html += 'id="' + data.id + '" ';
-        html += 'name="' + parentFormulaName + ' - ' + data.name + '" ';
-        html += 'placeholder="' + data.name + ' "/>'
+        var html = "";
+        for (var i=0; i<data.childFormulas.length; i++) {
+            html += '<h1>';
+            html += '<input class="form-control" type="text" ';
+            html += 'id="' + data.childFormulas[i].id + '" ';
+            html += 'name="' + data.name + ' - ' + data.childFormulas[i].name + '" ';
+            html += 'placeholder="' + data.childFormulas[i].name + ' "/>'
 
-        if (data.hasChildren) {
-            html += '<img src="/images/drill_arrow.svg" height="30px" onclick="getChildFormula(' + data.id + ')"/>'
+            if (data.childFormulas[i].hasChildren) {
+                html += '<img src="/images/drill_arrow.svg" height="30px" onclick="getChildFormula(' + data.childFormulas[i].id + ')"/>'
+            }
+
+            html += '</h1>';
         }
-
-        html += '</h1>';
 
         //alert(html);
 

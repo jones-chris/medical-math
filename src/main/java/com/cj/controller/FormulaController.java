@@ -33,11 +33,15 @@ public class FormulaController {
         return "index";
     }
 
-    @RequestMapping(value = "/childFormula/{parentId}/{name}", method = RequestMethod.GET)
+    //@RequestMapping(value = "/childFormula/{parentId}/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/childFormula")
     @ResponseBody
-    public ResponseEntity<Formula> ajaxGetChildFormula(@PathVariable Long parentId, @PathVariable String name, ModelMap modelMap) {
+    //public ResponseEntity<Formula> ajaxGetChildFormula(@PathVariable Long parentId, @PathVariable String name, ModelMap modelMap) {
+    public ResponseEntity<Formula> ajaxGetChildFormula(@RequestParam(value = "id") Long id,
+                                                       //@RequestParam(value = "name") String name,
+                                                       ModelMap modelMap) {
         try {
-            Formula formula = formulaService.findAllChildFormulasJSON(name, parentId);
+            Formula formula = formulaService.findAllChildFormulasJSON(id);
             return new ResponseEntity<>(formula, HttpStatus.OK);
         } catch (SqlResultCountException ex) {
             //modelMap.put("exception", ex.getMessage());

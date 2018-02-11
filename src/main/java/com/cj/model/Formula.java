@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Formula {
+public class Formula implements Comparable<Formula> {
     private Long id;
     private String name;
     private String[] parameters;
@@ -112,5 +112,10 @@ public class Formula {
         result = 31 * result + (parentId != null ? parentId.hashCode() : 0);
         result = 31 * result + (hasChildren ? 1 : 0);
         return result;
+    }
+
+    @Override
+    public int compareTo(Formula that) {
+        return this.name.compareTo(that.name);
     }
 }

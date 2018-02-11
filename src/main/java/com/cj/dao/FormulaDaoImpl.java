@@ -168,7 +168,7 @@ public class FormulaDaoImpl implements FormulaDao {
     }
 
     @Override
-    public Formula findByNameAndParentId(String name, Long parentId) throws SqlResultCountException {
+    public Formula findByNameAndParentId(Long id) throws SqlResultCountException {
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT f.id AS formula_id, ");
         sql.append("       f.name AS formula_name, ");
@@ -182,8 +182,8 @@ public class FormulaDaoImpl implements FormulaDao {
         sql.append("     medical_math.formula_category fc ");
         sql.append("WHERE f.id = fc.formula_id ");
         sql.append("  AND c.id = fc.category_id ");
-        sql.append("  AND f.id = ? ");
-        sql.append("  AND f.name = ?;");
+        sql.append("  AND f.id = ?;");
+        //sql.append("  AND f.name = ?;");
 
         jdbcTemplate = new JdbcTemplate(dataSource, true);
 
@@ -198,7 +198,7 @@ public class FormulaDaoImpl implements FormulaDao {
             }
         });*/
 
-        List<Formula> results = jdbcTemplate.query(sql.toString(), new Object[] {parentId, name}, new FormulaRowMapper());
+        List<Formula> results = jdbcTemplate.query(sql.toString(), new Object[] {id}, new FormulaRowMapper());
 
         if (results != null) {
             if (results.size() == 1) {
