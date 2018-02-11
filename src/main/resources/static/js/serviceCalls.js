@@ -6,7 +6,7 @@ function getChildFormula(id) {
       url: "http://localhost:8080/childFormula/5/Volume",
       //data: data,
       success: function(data) {
-        alert(data);
+        //alert(data);
 
         var parentFormulaName = document.getElementById(id).parentElement.getElementsByTagName('p')[0].innerHTML;
 
@@ -22,9 +22,12 @@ function getChildFormula(id) {
 
         html += '</h1>';
 
-        alert(html);
+        //alert(html);
 
-        document.getElementById(id).insertAdjacentHTML('afterend', html);
+        var formattedId = '#'+ id;
+        $( formattedId ).closest('div').after(html);
+
+        //deactivate drilldown arrow control.
 
       },
       dataType: 'json'

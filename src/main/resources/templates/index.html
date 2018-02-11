@@ -41,7 +41,10 @@
                    th:name="|${formula.name} - ${childFormula.name}|"
                    th:placeholder="${childFormula.name}"/>
 
-            <img th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}" height="30px" th:onclick="|getChildFormula(${childFormula.id})|"/>
+            <img th:id="|image${childFormula.id}|"
+                 th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}"
+                 height="30px"
+                 th:onclick="|getChildFormula(${childFormula.id}); this.disabled = true;|"/>
         </th:block>
 
         <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
@@ -53,7 +56,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script th:src="@{/js/formulas.js}" type="text/javascript"></script>
-    <script th:src="@{/js/ajax.js}" type="text/javascript"></script>
+    <script th:src="@{/js/serviceCalls.js}" type="text/javascript"></script>
 
 </body>
 </html>
