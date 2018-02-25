@@ -21,48 +21,48 @@ public class FormulaDaoImpl implements FormulaDao {
     @Autowired private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
-    @Override
-    public Formula findById(Long id) {
-        StringBuilder sql = new StringBuilder();
-        sql.append("SELECT f.id AS formula_id, ");
-        sql.append(       "f.name AS formula_name, ");
-        sql.append(       "f.parameters AS formula_parameters, ");
-        sql.append(       "c.id AS category_id, ");
-        sql.append(       "c.name AS category_name ");
-        sql.append("FROM medical_math.formula f, ");
-        sql.append(     "medical_math.category c, ");
-        sql.append(     "medical_math.formula_category fc ");
-        sql.append(String.format("WHERE f.id = %s", id));
-        sql.append("  AND f.id = fc.formula_id ");
-        sql.append("  AND c.id = fc.category_id;");
+//    @Override
+//    public Formula findById(Long id) {
+//        StringBuilder sql = new StringBuilder();
+//        sql.append("SELECT f.id AS formula_id, ");
+//        sql.append(       "f.name AS formula_name, ");
+//        sql.append(       "f.parameters AS formula_parameters, ");
+//        sql.append(       "c.id AS category_id, ");
+//        sql.append(       "c.name AS category_name ");
+//        sql.append("FROM medical_math.formula f, ");
+//        sql.append(     "medical_math.category c, ");
+//        sql.append(     "medical_math.formula_category fc ");
+//        sql.append(String.format("WHERE f.id = %s", id));
+//        sql.append("  AND f.id = fc.formula_id ");
+//        sql.append("  AND c.id = fc.category_id;");
+//
+//        jdbcTemplate = new JdbcTemplate(dataSource, true);
+//
+//        // Query should only return one record, but jdbcTemplate's query method returns a list,
+//        // so get the first element in list and return it.
+//        return jdbcTemplate.queryForObject(sql.toString(), new FormulaRowMapper());
+//    }
 
-        jdbcTemplate = new JdbcTemplate(dataSource, true);
-
-        // Query should only return one record, but jdbcTemplate's query method returns a list,
-        // so get the first element in list and return it.
-        return jdbcTemplate.queryForObject(sql.toString(), new FormulaRowMapper());
-    }
-
-    @Override
-    public List<Formula> findAll() {
-        StringBuilder sql = new StringBuilder();
-        sql.append("SELECT f.id AS formula_id, ");
-        sql.append(       "f.name AS formula_name, ");
-        sql.append(       "f.parameters AS formula_parameters, ");
-        sql.append(       "f.parent_id AS formula_parent_id,");
-        sql.append(       "f.has_children AS formula_has_children,");
-        sql.append(       "c.id AS category_id, ");
-        sql.append(       "c.name AS category_name ");
-        sql.append("FROM medical_math.formula f, ");
-        sql.append(     "medical_math.category c, ");
-        sql.append(     "medical_math.formula_category fc ");
-        sql.append("WHERE f.id = fc.formula_id ");
-        sql.append("  AND c.id = fc.category_id;");
-
-        jdbcTemplate = new JdbcTemplate(dataSource, true);
-
-        return jdbcTemplate.query(sql.toString(), new FormulaRowMapper());
-    }
+//    @Override
+//    public List<Formula> findAll() {
+//        StringBuilder sql = new StringBuilder();
+//        sql.append("SELECT f.id AS formula_id, ");
+//        sql.append(       "f.name AS formula_name, ");
+//        sql.append(       "f.parameters AS formula_parameters, ");
+//        sql.append(       "f.parent_id AS formula_parent_id,");
+//        sql.append(       "f.has_children AS formula_has_children,");
+//        sql.append(       "c.id AS category_id, ");
+//        sql.append(       "c.name AS category_name ");
+//        sql.append("FROM medical_math.formula f, ");
+//        sql.append(     "medical_math.category c, ");
+//        sql.append(     "medical_math.formula_category fc ");
+//        sql.append("WHERE f.id = fc.formula_id ");
+//        sql.append("  AND c.id = fc.category_id;");
+//
+//        jdbcTemplate = new JdbcTemplate(dataSource, true);
+//
+//        return jdbcTemplate.query(sql.toString(), new FormulaRowMapper());
+//    }
 
     @Override
     public List<Formula> findAllByCategory(String categoryName) {
@@ -84,22 +84,22 @@ public class FormulaDaoImpl implements FormulaDao {
         return jdbcTemplate.query(sql.toString(), new Object[] { categoryName }, new FormulaRowMapper());
     }
 
-    @Override
-    public Formula findChildFormula(Long parentId, String childFormulaName) {
-        StringBuilder sql = new StringBuilder();
-        sql.append("select * ");
-        sql.append("from (select pc.*, ");
-        sql.append("             f.* ");
-        sql.append("      from medical_math.formula_parent_child pc, ");
-        sql.append("           medical_math.formula f ");
-        sql.append("      where pc.parent_id = :parentId ");
-        sql.append("        and pc.child_id = f.id) AS all_children ");
-        sql.append("where parameters LIKE ('%:childFormulaName%');");
-
-        jdbcTemplate = new JdbcTemplate(dataSource, true);
-
-        return jdbcTemplate.queryForObject(sql.toString(), Formula.class, parentId, childFormulaName);
-    }
+//    @Override
+//    public Formula findChildFormula(Long parentId, String childFormulaName) {
+//        StringBuilder sql = new StringBuilder();
+//        sql.append("select * ");
+//        sql.append("from (select pc.*, ");
+//        sql.append("             f.* ");
+//        sql.append("      from medical_math.formula_parent_child pc, ");
+//        sql.append("           medical_math.formula f ");
+//        sql.append("      where pc.parent_id = :parentId ");
+//        sql.append("        and pc.child_id = f.id) AS all_children ");
+//        sql.append("where parameters LIKE ('%:childFormulaName%');");
+//
+//        jdbcTemplate = new JdbcTemplate(dataSource, true);
+//
+//        return jdbcTemplate.queryForObject(sql.toString(), Formula.class, parentId, childFormulaName);
+//    }
 
     @Override
     public List<Formula> findAllChildFormulas(Long id) {
@@ -145,30 +145,30 @@ public class FormulaDaoImpl implements FormulaDao {
         return jdbcTemplate.query(sql.toString(), new FormulaRowMapper());
     }
 
-    public List<Formula> findAllChildFormulasJSON(Long id) {
-        StringBuilder sql = new StringBuilder();
-        sql.append("select row_to_json(t) ");
-        sql.append("from (SELECT f.id AS formula_id, ");
-        sql.append("             f.name AS formula_name, ");
-        sql.append("             f.parameters AS formula_parameters, ");
-        sql.append("             f.parent_id AS formula_parent_id, ");
-        sql.append("             f.has_children AS formula_has_children, ");
-        sql.append("             c.id AS category_id, ");
-        sql.append("             c.name AS category_name ");
-        sql.append("FROM medical_math.formula f, ");
-        sql.append("     medical_math.category c, ");
-        sql.append("     medical_math.formula_category fc ");
-        sql.append("WHERE f.id = fc.formula_id ");
-        sql.append("  AND c.id = fc.category_id ");
-        sql.append("  AND f.parent_id = ?) t;");
-
-        jdbcTemplate = new JdbcTemplate(dataSource, true);
-
-        return jdbcTemplate.queryForList(sql.toString(), new Object[] {id}, Formula.class);
-    }
+//    public List<Formula> findAllChildFormulasJSON(Long id) {
+//        StringBuilder sql = new StringBuilder();
+//        sql.append("select row_to_json(t) ");
+//        sql.append("from (SELECT f.id AS formula_id, ");
+//        sql.append("             f.name AS formula_name, ");
+//        sql.append("             f.parameters AS formula_parameters, ");
+//        sql.append("             f.parent_id AS formula_parent_id, ");
+//        sql.append("             f.has_children AS formula_has_children, ");
+//        sql.append("             c.id AS category_id, ");
+//        sql.append("             c.name AS category_name ");
+//        sql.append("FROM medical_math.formula f, ");
+//        sql.append("     medical_math.category c, ");
+//        sql.append("     medical_math.formula_category fc ");
+//        sql.append("WHERE f.id = fc.formula_id ");
+//        sql.append("  AND c.id = fc.category_id ");
+//        sql.append("  AND f.parent_id = ?) t;");
+//
+//        jdbcTemplate = new JdbcTemplate(dataSource, true);
+//
+//        return jdbcTemplate.queryForList(sql.toString(), new Object[] {id}, Formula.class);
+//    }
 
     @Override
-    public Formula findByNameAndParentId(Long id) throws SqlResultCountException {
+    public Formula findById(Long id) throws SqlResultCountException {
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT f.id AS formula_id, ");
         sql.append("       f.name AS formula_name, ");
@@ -186,17 +186,6 @@ public class FormulaDaoImpl implements FormulaDao {
         //sql.append("  AND f.name = ?;");
 
         jdbcTemplate = new JdbcTemplate(dataSource, true);
-
-        /*return jdbcTemplate.execute(sql.toString(), new PreparedStatementCallback<Object>() {
-
-            @Override
-            public Object doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
-                ps.setLong(1, parentId);
-                ps.setString(2, name);
-
-                return ps.execute();
-            }
-        });*/
 
         List<Formula> results = jdbcTemplate.query(sql.toString(), new Object[] {id}, new FormulaRowMapper());
 

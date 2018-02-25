@@ -16,10 +16,14 @@ import java.util.List;
 public class FormulaServiceImpl implements FormulaService {
     @Autowired private FormulaDao formulaDao;
 
-    @Override
-    public Formula findById(Long id) {
-        return formulaDao.findById(id);
-    }
+//    @Override
+//    public Formula findById(Long id) throws SqlResultCountException {
+//        try {
+//            return formulaDao.findById(id);
+//        } catch (SqlResultCountException ex) {
+//            throw ex;
+//        }
+//    }
 
     @Override
     public List<Formula> findAll() {
@@ -49,9 +53,9 @@ public class FormulaServiceImpl implements FormulaService {
     }
 
     @Override
-    public Formula findAllChildFormulasJSON(Long id) throws SqlResultCountException {
+    public Formula findById(Long id) throws SqlResultCountException {
         try {
-            Formula formula = formulaDao.findByNameAndParentId(id);
+            Formula formula = formulaDao.findById(id);
 
             List<Formula> childFormulas = formulaDao.findAllChildFormulas(formula.getId());
             Collections.sort(childFormulas);
@@ -63,6 +67,5 @@ public class FormulaServiceImpl implements FormulaService {
         }
 
     }
-
-
+    
 }

@@ -41,14 +41,13 @@ public class FormulaController {
                                                        //@RequestParam(value = "name") String name,
                                                        ModelMap modelMap) {
         try {
-            Formula formula = formulaService.findAllChildFormulasJSON(id);
+            Formula formula = formulaService.findById(id);
             return new ResponseEntity<>(formula, HttpStatus.OK);
         } catch (SqlResultCountException ex) {
             //modelMap.put("exception", ex.getMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         //return "index";
-
     }
 
 }

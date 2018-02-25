@@ -44,7 +44,7 @@
             <img th:id="|image${childFormula.id}|"
                  th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}"
                  height="30px"
-                 th:onclick="|getChildFormula(${childFormula.id}); this.disabled = true;|"/>
+                 th:onclick="|getChildFormula(${childFormula.id}); this.style.display = 'none';|"/>
         </th:block>
 
         <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
