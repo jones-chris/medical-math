@@ -18,8 +18,8 @@ public class FormulaRowMapper implements RowMapper<Formula> {
         formula.setParentId(rs.getLong("formula_parent_id"));
         formula.setHasChildren(rs.getBoolean("formula_has_children"));
 
-        String[] formulaParamsList = rs.getString("formula_parameters").split(",");
-        formula.setParameters(formulaParamsList);
+//        String[] formulaParamsList = rs.getString("formula_parameters").split(",");
+//        formula.setParameters(formulaParamsList);
 
         Category category = new Category();
         category.setId(rs.getLong("category_id"));

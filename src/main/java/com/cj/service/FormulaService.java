@@ -9,6 +9,6 @@ import java.util.List;
 public interface FormulaService {
     Formula findById(Long id) throws SqlResultCountException;
     List<Formula> findAll();
-    List<Formula> findAllByCategory(String categoryName);
+    List<Formula> findAllByCategory(Long categoryId);
     //Formula findAllChildFormulasJSON(Long id) throws SqlResultCountException;
 }

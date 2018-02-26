@@ -5,7 +5,6 @@ import com.cj.model.Category;
 import com.cj.model.Formula;
 import com.cj.service.CategoryService;
 import com.cj.service.FormulaService;
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -33,12 +31,9 @@ public class FormulaController {
         return "index";
     }
 
-    //@RequestMapping(value = "/childFormula/{parentId}/{name}", method = RequestMethod.GET)
     @RequestMapping(value = "/childFormula")
     @ResponseBody
-    //public ResponseEntity<Formula> ajaxGetChildFormula(@PathVariable Long parentId, @PathVariable String name, ModelMap modelMap) {
     public ResponseEntity<Formula> ajaxGetChildFormula(@RequestParam(value = "id") Long id,
-                                                       //@RequestParam(value = "name") String name,
                                                        ModelMap modelMap) {
         try {
             Formula formula = formulaService.findById(id);

@@ -16,40 +16,22 @@ import java.util.List;
 public class FormulaServiceImpl implements FormulaService {
     @Autowired private FormulaDao formulaDao;
 
-//    @Override
-//    public Formula findById(Long id) throws SqlResultCountException {
-//        try {
-//            return formulaDao.findById(id);
-//        } catch (SqlResultCountException ex) {
-//            throw ex;
-//        }
-//    }
 
     @Override
     public List<Formula> findAll() {
-        //return  formulaDao.findAll();
-
-        // get all parent formulas
         List<Formula> parentFormulas = formulaDao.findAllParentFormulas();
-
-        //List<Formula> formulas = new ArrayList<>();
 
         for (Formula formula : parentFormulas) {
             List<Formula> childFormulas = formulaDao.findAllChildFormulas(formula.getId());
-
             formula.setChildFormulas(childFormulas);
-
-            //formulas.add(formula);
         }
 
         return parentFormulas;
-
-        //return formulas;
     }
 
     @Override
-    public List<Formula> findAllByCategory(String categoryName) {
-        return  formulaDao.findAllByCategory(categoryName);
+    public List<Formula> findAllByCategory(Long categoryId) {
+        return  formulaDao.findAllByCategory(categoryId);
     }
 
     @Override

@@ -8,7 +8,7 @@ import java.util.List;
 public class Formula implements Comparable<Formula> {
     private Long id;
     private String name;
-    private String[] parameters;
+    //private String[] parameters;
     private List<Formula> childFormulas;
     private Category category;
     private String abbreviation;
@@ -19,9 +19,9 @@ public class Formula implements Comparable<Formula> {
         this.childFormulas = new ArrayList<>();
     }
 
-    public Formula(String name, String[] parameters, Category category, Long parentId, boolean hasChildren) {
+    public Formula(String name, Category category, Long parentId, boolean hasChildren) {
         this.name = name;
-        this.parameters = parameters;
+        //this.parameters = parameters;
         this.category = category;
         this.parentId = parentId;
         this.hasChildren = hasChildren;
@@ -44,13 +44,13 @@ public class Formula implements Comparable<Formula> {
         this.name = name;
     }
 
-    public String[] getParameters() {
-        return parameters;
-    }
-
-    public void setParameters(String[] parameters) {
-        this.parameters = parameters;
-    }
+//    public String[] getParameters() {
+//        return parameters;
+//    }
+//
+//    public void setParameters(String[] parameters) {
+//        this.parameters = parameters;
+//    }
 
     public Category getCategory() {
         return category;
@@ -105,7 +105,7 @@ public class Formula implements Comparable<Formula> {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + Arrays.hashCode(parameters);
+        //result = 31 * result + Arrays.hashCode(parameters);
         result = 31 * result + (childFormulas != null ? childFormulas.hashCode() : 0);
         result = 31 * result + (category != null ? category.hashCode() : 0);
         result = 31 * result + (abbreviation != null ? abbreviation.hashCode() : 0);
