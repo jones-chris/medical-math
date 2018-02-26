@@ -122,8 +122,8 @@
       <file leaf-file-name="FormulaRowMapper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state relative-caret-position="136">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -1116,7 +1116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519535776547</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added SQL for master_formula_v.">
+      <created>1519603833784</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1519603833784</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1207,7 +1214,8 @@
     <MESSAGE value="Fixed view when child formulas are added.  Also tested adding 2 children formulas with AJAX." />
     <MESSAGE value="Able to indent child formulas in AJAX success callback." />
     <MESSAGE value="Fixed child formula titles and bug in AJAX child formula success callback where HTML string was building on prior loops." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed child formula titles and bug in AJAX child formula success callback where HTML string was building on prior loops." />
+    <MESSAGE value="Added SQL for master_formula_v." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SQL for master_formula_v." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1575,8 +1583,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cj/mappers/FormulaRowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        <state relative-caret-position="136">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding />
         </state>
       </provider>
