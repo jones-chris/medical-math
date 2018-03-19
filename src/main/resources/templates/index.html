@@ -20,20 +20,17 @@
         </a>
     </nav>
 
+    <!-- Unit Conversion Script - TheUnitConverter.com -->
+    <!--<div style="width:238px;margin:0px auto;">
+        <div style="width:99.5%;border:1px solid #2D6AB4;border-top:none;border-bottom:none;text-align:center; height:24px;font-size:16px;padding:5px 0px 0px 0px;border-top-right-radius:5px; border-top-left-radius:5px;background-color:#2D6AB4;color:#FFFFFF; font-weight:bold;">
+            <a href="https://www.theunitconverter.com/" style="color:#FFFFFF; text-decoration:none;" rel="nofollow">Length Conversion</a>
+        </div>
+        <script type="text/javascript" src="https://www.theunitconverter.com/converter.php?l=en&t=1&c=0&a=FFFFFF&d=000000&b=2D6AB4&s=length"></script>
+    </div>-->
+    <!-- End of Unit Conversion Script -->
+
     <div class="form-group" th:each="formula : ${formulas}">
         <p th:id="${formula.id}" th:text="${formula.name}"></p>
-
-        <!--<br/>-->
-
-        <!--<form action=""></form>-->
-        <!--<th:block th:each="parameter : ${formula.parameters}">
-            <input class="form-control" type="text"
-                   th:id="${formula.id}"
-                   th:name="|${formula.name} - ${parameter}|"
-                   th:placeholder="${parameter}"/>
-
-            <img th:id="|${parameter}|" th:src="@{/images/drill_arrow.svg}" height="60px"/>
-        </th:block>-->
 
         <th:block th:each="childFormula : ${formula.childFormulas}">
             <input class="form-control" type="text"
