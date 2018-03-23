@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Medical Math</title>
+
+    <link rel="stylesheet" href="css/darkly.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a th:href="${user != null ? '/profile' : '/login'}" th:text="${user != null ? user.username : 'log in'}">
+            Chandra S.
+        </a>
+        &bull;
+        <a href="/logout">
+            logout
+        </a>
+    </nav>
+
+    <div th:each="formula : ${formulas}" th:id="${formula.id}" class="formula-box">
+
+        <h1 th:id="|name-${formula.id}|" th:text="${formula.name}"></h1>
+
+        <div th:each="childFormula : ${formula.childFormulas}" class="form-group form-inline">
+            <label th:for="|input-${childFormula.id}|" th:text="${childFormula.name}"></label>
+            <div>
+                <input type="text" th:id="|input-${childFormula.id}|"/>
+
+                <img th:id="|image-${childFormula.id}|"
+                     th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}"
+                     height="30px"
+                     th:onclick="|getChildFormula(${childFormula.id}); this.style.display = 'none';|"/>
+            </div>
+        </div>
+
+
+        <label th:for="|result-${formula.id}|">Result:</label>
+        <h2 type="text" th:id="|result-${formula.id}|"></h2>
+
+    </div>
+
+</body>
+</html>

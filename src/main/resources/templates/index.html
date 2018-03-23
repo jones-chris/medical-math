@@ -29,26 +29,27 @@
     </div>-->
     <!-- End of Unit Conversion Script -->
 
-    <div class="form-group" th:each="formula : ${formulas}">
-        <p th:id="${formula.id}" th:text="${formula.name}"></p>
+    <div class="form-group" th:each="formula : ${formulas}" >
+        <div th:id="|topLevel-${formula.id}|">
+            <p th:id="|name-${formula.id}|" th:text="${formula.name}"></p>
 
-        <th:block th:each="childFormula : ${formula.childFormulas}">
-            <input class="form-control" type="text"
-                   th:id="${childFormula.id}"
-                   th:name="|${formula.name} - ${childFormula.name}|"
-                   th:placeholder="${childFormula.name}"/>
+            <th:block th:each="childFormula : ${formula.childFormulas}">
+                <input class="form-control" type="text"
+                       th:id="|input-${childFormula.id}|"
+                       th:name="|${formula.name} - ${childFormula.name}|"
+                       th:placeholder="${childFormula.name}"/>
 
-            <img th:id="|image${childFormula.id}|"
-                 th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}"
-                 height="30px"
-                 th:onclick="|getChildFormula(${childFormula.id}); this.style.display = 'none';|"/>
-        </th:block>
+                <img th:id="|image-${childFormula.id}|"
+                     th:if="${childFormula.hasChildren}" th:src="@{/images/drill_arrow.svg}"
+                     height="30px"
+                     th:onclick="|getChildFormula(${childFormula.id}); this.style.display = 'none';|"/>
+            </th:block>
 
-        <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
+            <button type="button" th:onclick="|${#strings.replace(formula.name, ' ', '')}()|">Calculate</button>
 
-        <label class="col-form-label" th:for="|${formula.name}-result|">Result:</label>
-        <input class="form-control" type="text" th:id="|${formula.name}-result|"/>
-
+            <label class="col-form-label" th:for="|${formula.name}-result|">Result:</label>
+            <input class="form-control" type="text" th:id="|${formula.name}-result|"/>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

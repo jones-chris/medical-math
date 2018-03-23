@@ -6,23 +6,25 @@ function getChildFormula(id) {
       },
       success: function(data) {
         var html = "";
-        var formattedId = '#'+ id;
+        var formattedId = '#input-'+ id;
         var parentOuterWidth = parseInt($( formattedId ).css('padding-left'));
 
         for (var i=0; i<data.childFormulas.length; i++) {
             if (i === 0) {
-                html += '<div style="display: inline-flex;">'; //class="form-group"
+                html += '<div id="children-' + id + '" style="display: table;">'; //class="form-group"
+                html += '<h1 hidden="true" id="parentIdRef">' + 'input-' + id + '</h1>'
             }
 
-            html += '<p id="' + data.childFormulas[i].id + '">' + data.childFormulas[i].name + '</p>';
-
-            html += '<input class="form-control" type="text" ';
-            html += 'id="' + data.childFormulas[i].id + '" ';
-            html += 'name="' + data.name + ' - ' + data.childFormulas[i].name + '" ';
-            html += 'placeholder="' + data.childFormulas[i].name + ' ">'
+            html += '<div style="display: table-cell">';
+            html +=     '<p id="name-' + data.childFormulas[i].id + '">' + data.childFormulas[i].name + '</p>';
+            html +=     '<input class="form-control" type="text" ';
+            html +=         'id="input-' + data.childFormulas[i].id + '" ';
+            html +=         'name="' + data.name + ' - ' + data.childFormulas[i].name + '" ';
+            html +=         'placeholder="' + data.childFormulas[i].name + ' ">'
+            html += '</div>'
 
             if (data.childFormulas[i].hasChildren) {
-                html += '<img src="/images/drill_arrow.svg" height="30px" onclick="getChildFormula(' + data.childFormulas[i].id + ')"/>'
+                html += '<img id="image-' + data.childFormulas[i].id + '" src="/images/drill_arrow.svg" height="30px" onclick="getChildFormula(' + data.childFormulas[i].id + ')"/>'
             }
 
             //var newFormulaName = data.childFormulas[i].name.replace(/\s/g, '');
@@ -32,29 +34,23 @@ function getChildFormula(id) {
             // get parent formula name and add Calculate button if child formula is the last child formula.
             if (i === data.childFormulas.length - 1) {
                 var parentFormula = $( formattedId )[0].name;
-                html += '<button type="button" th:onclick="' + parentFormula + '()">Calculate</button>';
-                html += '<label class="col-form-label" for="' + data.childFormulas[i].name + '-result">Result:</label>';
-                html += '<input class="form-control" type="text" id="' + data.childFormulas[i].name + '-result">';
+                html +=     '<div style="display: table-cell">';
+                //html += '<button type="button" th:onclick="' + parentFormula + '()">Calculate</button>';
+                html +=         '<p>Result:</p>';
+                html +=         '<input class="form-control" type="text" id="' + data.childFormulas[i].name + '-result">';
+                html +=     '</div>'
                 html += '</div>';
 
                 // Insert new HTML.
-                $( formattedId ).closest('div').after(html);
-
-                // Indent child formula by parentOuterWidth + 50px.
-//                var childFormattedId = '#' + data.childFormulas[i].id;
-//                var newChildPaddingLeft = parentOuterWidth + 50;
-//                $( childFormattedId ).parent().css('padding-left', newChildPaddingLeft + 'px');
+                $( formattedId ).closest('div').append(html);
             }
 
-            // Reset variable for next loop.
-            //html = "";
+            // Indent children div by parentOuterWidth + 50px.
+            var childrenId = '#children-' + id
+            var newChildPaddingLeft = parentOuterWidth + 50;
+            $( childrenId ).css('padding-left', newChildPaddingLeft + 'px');
         }
       },
       dataType: 'json'
     });
-}
-
-function success(data) {
-    //alert("successfully got data with AJAX!");
-    alert(data);
 }

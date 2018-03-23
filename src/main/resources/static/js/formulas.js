@@ -1,20 +1,3 @@
-// AJAX calls
-
-/*function getChildFormula(id) {
-    //alert("You clicked the AJAX call for " + id);
-
-    $.ajax({
-      url: "http://localhost:8080/childFormula/5/Volume",
-      //data: data,
-      success: success(),
-      dataType: json
-    });
-}
-
-function success() {
-    alert("successfully got data with AJAX!");
-}*/
-
 // Formula function calls that can will be the callback methods for the webpage's views.
 
 function BodyMassIndex() {

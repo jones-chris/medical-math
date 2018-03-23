@@ -1,0 +1,10 @@
+label {
+    padding-right: 20px;
+}
+
+.formula-box {
+    width: 600px;
+    border: 5px solid orange;
+    padding: 25px;
+    margin: 25px;
+}

@@ -28,7 +28,7 @@ public class FormulaController {
         List<Category> categories = categoryService.findAll();
         modelMap.put("formulas", formulas);
         modelMap.put("categories", categories);
-        return "index";
+        return "index3";
     }
 
     @RequestMapping(value = "/childFormula")
