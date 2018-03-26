@@ -5,6 +5,7 @@ import com.cj.exceptions.SqlResultCountException;
 import com.cj.model.Formula;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FormulaDao {
     Formula findById(Long id) throws SqlResultCountException;
@@ -13,6 +14,5 @@ public interface FormulaDao {
     //Formula findChildFormula(Long parentId, String childFormulaName);
     List<Formula> findAllChildFormulas(Long id);
     List<Formula> findAllParentFormulas();
-    //List<Formula> findAllChildFormulasJSON(Long id);
-    //Formula findByNameAndParentId(Long id) throws SqlResultCountException;
+    Map<String, String> findAllIDsAndNames();
 }

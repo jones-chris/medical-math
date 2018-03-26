@@ -7,10 +7,7 @@ import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class FormulaServiceImpl implements FormulaService {
@@ -32,6 +29,11 @@ public class FormulaServiceImpl implements FormulaService {
     @Override
     public List<Formula> findAllByCategory(Long categoryId) {
         return  formulaDao.findAllByCategory(categoryId);
+    }
+
+    @Override
+    public List<Formula> findAllIDsAndNames() {
+        return formulaDao.findAllParentFormulas();
     }
 
     @Override
