@@ -31,8 +31,6 @@ $(':input').blur(calculateAfterBlur);
 // calculate formula after blur (this function is meant to be assigned to an onblur event for input boxes.
 function calculateAfterBlur() {
 
-    // get in-memory cache of master_formula table (formula_id and formula_name columns) to map id to name in order to call formulas.js.
-
     // while not null (closest() function will return null if it can't find anymore matching elements)
     var divIsChildOrTopLevel = false;
     while (! divIsChildOrTopLevel) {
@@ -40,7 +38,7 @@ function calculateAfterBlur() {
         if (parentEl.id.indexOf('topLevel-') > -1) {
             divIsChildOrTopLevel = true;
             // get id from id attribute
-            var formulaId = parentEl.id.substring(9); // 8 is the length of 'topLevel-'
+            var formulaId = parentEl.id.substring(9); // 9 is the length of 'topLevel-'
 
             // lookup value of id in local storage
             var formulaName = window.localStorage.getItem(formulaId);
@@ -64,14 +62,45 @@ function calculateAfterBlur() {
             var func = window[formulaName];
             var result = func.apply(this, args);
 
-            // call formula in formulas.js
-            //var func = new Function(formulaName);
-            //var result = func.apply(null, args); //try func();
-
-            alert(result);
-
             // add result after Result label.
-            $('#result-' + formulaId).innerHTML = result;
+            $('#result-' + formulaId).html(result);
+//            $('#result-' + formulaId).select;
+//            document.execCommand('Copy');
+        } else if (parentEl.id.indexOf('children-') > -1) {
+            divIsChildOrTopLevel = true;
+            // get id from id attribute
+            var formulaId = parentEl.id.substring(9); // 9 is the length of 'children-'
+
+            // lookup value of id in local storage
+            var formulaName = window.localStorage.getItem(formulaId);
+
+            // remove spaces in formula name
+            formulaName = formulaName.replace(/\s/g, '');
+
+            // get relevant input boxes in div
+            var formattedParentElId = '#' + parentEl.id;
+            var inputs = $(formattedParentElId + ' >:input');
+
+            var args = [];
+            for (var i=0; i<inputs.length; i++) {
+                if (inputs[i].value === "") { // an input box is missing a value, so do not calculate.
+                    return;
+                } else {
+                    args.push(inputs[i].value);
+                }
+            }
+
+            var func = window[formulaName];
+            var result = func.apply(this, args);
+
+            //get parent input box reference from hidden h1 element
+            var parentRef = $(formattedParentElId + ' >:h1').html();
+
+            //set parent input box value
+            $('#' + parentRef).value = result;
+
+            //fire parent input box blur event to see if parent formula can be calculated
+            $('#' + parentRef).onblur();
         }
     }
     // get closest div
@@ -100,6 +129,20 @@ function BodyMassIndex(kg, metersSquared) {
     }
 
     return parseInt(kg) / parseInt(metersSquared);
+}
+
+function TestFormulaLevel2(testFormulaLevel3, testFormulaLevel32) {
+    if (paramIsNull(testFormulaLevel3) || paramIsNull(testFormulaLevel32)) {
+        console.log("One of the parameters was null or is an empty string.");
+        return;
+    }
+
+    if (isNaN(testFormulaLevel3) || isNaN(testFormulaLevel32)) {
+        alert("You must input a number!");
+        return;
+    }
+
+    return parseInt(testFormulaLevel3) / parseInt(testFormulaLevel32);
 }
 
 //=============================================================================================

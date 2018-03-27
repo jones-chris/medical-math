@@ -28,7 +28,6 @@
 
         <th:block th:each="childFormula : ${formula.childFormulas}" th:id="|children-${formula.id}|" class="form-group form-inline">
             <label th:for="|input-${childFormula.id}|" th:text="${childFormula.name}"></label>
-            <!--<div>-->
                 <input type="text" th:id="|input-${childFormula.id}|"/>
 
                 <img th:id="|image-${childFormula.id}|"
@@ -36,12 +35,11 @@
                      height="30px"
                      th:onclick="|getChildFormula(${childFormula.id}); this.style.display = 'none';|"/>
             <br/>
-            <!--</div>-->
         </th:block>
 
         <br/>
         <label th:for="|result-${formula.id}|">Result:  </label>
-        <h2 type="text" th:id="|result-${formula.id}|"></h2>
+        <h1 type="text" th:id="|result-${formula.id}|"></h1>
 
     </div>
 
