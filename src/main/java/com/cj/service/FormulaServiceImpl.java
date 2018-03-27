@@ -32,8 +32,9 @@ public class FormulaServiceImpl implements FormulaService {
     }
 
     @Override
-    public List<Formula> findAllIDsAndNames() {
-        return formulaDao.findAllParentFormulas();
+    public Map<String, String> findAllIDsAndNames() {
+        //return formulaDao.findAllParentFormulas();
+        return formulaDao.findAllIDsAndNames();
     }
 
     @Override

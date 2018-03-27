@@ -7,7 +7,8 @@ $.ajax({
             localStorage.clear();
 
             for (var i in data) {
-                localStorage.setItem(data[i]['id'], data[i]['name']);
+                //localStorage.setItem(data[i]['id'], data[i]['name']);
+                localStorage.setItem(i, data[i])
             }
 
 //            //get version key value in local storage

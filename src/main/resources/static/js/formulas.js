@@ -94,13 +94,14 @@ function calculateAfterBlur() {
             var result = func.apply(this, args);
 
             //get parent input box reference from hidden h1 element
-            var parentRef = $(formattedParentElId + ' >:h1').html();
+            //var parentRef = $(formattedParentElId + ' >:h1').html();
+            var parentRef = parentEl.getElementsByTagName('h1')[0].innerHTML;
 
             //set parent input box value
-            $('#' + parentRef).value = result;
+            $('#' + parentRef).val(result);
 
             //fire parent input box blur event to see if parent formula can be calculated
-            $('#' + parentRef).onblur();
+            $('#' + parentRef).blur();
         }
     }
     // get closest div

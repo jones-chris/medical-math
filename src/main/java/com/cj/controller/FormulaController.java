@@ -50,9 +50,9 @@ public class FormulaController {
 
     @RequestMapping(value = "/allFormulas")
     @ResponseBody
-    public ResponseEntity<List<Formula>> getAllFormulas() {
+    public ResponseEntity<Map<String, String>> getAllFormulas() {
         try {
-            List<Formula> formulas = formulaService.findAllIDsAndNames();
+            Map<String, String> formulas = formulaService.findAllIDsAndNames();
             return new ResponseEntity<>(formulas, HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
