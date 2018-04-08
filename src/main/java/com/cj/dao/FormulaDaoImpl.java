@@ -120,6 +120,18 @@ public class FormulaDaoImpl implements FormulaDao {
     }
 
     @Override
+    public List<Formula> findByName(String name) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * ");
+        sql.append("from medical_math.master_formula ");
+        sql.append("where upper(formula_name) like ?; ");
+
+        jdbcTemplate = new JdbcTemplate(dataSource, true);
+
+        return jdbcTemplate.query(sql.toString(), new Object[] {"%" + name.toUpperCase() + "%"}, new FormulaRowMapper());
+    }
+
+    @Override
     public Formula findById(Long id) throws SqlResultCountException {
         StringBuilder sql = new StringBuilder();
 //        sql.append("SELECT f.id AS formula_id, ");

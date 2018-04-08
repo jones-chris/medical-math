@@ -26,8 +26,18 @@ public class FormulaController {
     public FormulaController() {}
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String getTopLevelFormulas(ModelMap modelMap) {
-        List<Formula> formulas = formulaService.findAll();
+    public String getTopLevelFormulas(@RequestParam(value = "searchCategory", required = false, defaultValue = "") String categoryId,
+                                      @RequestParam(value = "searchName", required = false, defaultValue = "") String name,
+                                      ModelMap modelMap) {
+        List<Formula> formulas;
+        if (! categoryId.equals("")) {
+            formulas = formulaService.findAllByCategory(Long.parseLong(categoryId));
+        } else if (! name.equals("")) {
+            formulas = formulaService.findByName(name);
+        } else {
+            formulas = formulaService.findAll();
+        }
+
         List<Category> categories = categoryService.findAll();
         modelMap.put("formulas", formulas);
         modelMap.put("categories", categories);
@@ -69,5 +79,13 @@ public class FormulaController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+//    @RequestMapping(value = "/formulasById/{id}", method = RequestMethod.GET)
+//    @ResponseBody
+//    public ResponseEntity<List<Formula>> getFormulasById(@PathVariable Long id) {
+//        List<Formula> formulas = formulaService.findAllByCategory(id);
+//        return new ResponseEntity<>(formulas, HttpStatus.OK);
+//    }
+
 
 }

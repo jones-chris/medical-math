@@ -15,4 +15,5 @@ public interface FormulaDao {
     List<Formula> findAllChildFormulas(Long id);
     List<Formula> findAllParentFormulas();
     Map<String, String> findAllIDsAndNames();
+    List<Formula> findByName(String name);
 }

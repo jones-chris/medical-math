@@ -18,7 +18,7 @@ function getChildFormula(id) {
             //html += '<div class="form-group form-inline">';
             html +=     '<label id="name-' + data.childFormulas[i].id + ' for="input-' + data.childFormulas[i].id + '">' + data.childFormulas[i].name + '</label>';
             //html +=     '<div>'
-            html +=     '<input type="text" ';
+            html +=     '<input type="number" ';
             html +=         'id="input-' + data.childFormulas[i].id + '" ';
             html +=         'name="' + data.name + ' - ' + data.childFormulas[i].name + '" >';
             html += '<br/>'
@@ -56,7 +56,6 @@ function getChildFormula(id) {
             var childrenId = '#children-' + id
             var newChildPaddingLeft = parentOuterWidth + 50;
             $( childrenId ).css('padding-left', newChildPaddingLeft + 'px');
-
 
         }
       },

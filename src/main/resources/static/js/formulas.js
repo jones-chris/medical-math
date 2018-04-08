@@ -26,7 +26,12 @@
 //    //console.log(parseInt(kg) / parseInt(m2));
 //}
 
-$(':input').blur(calculateAfterBlur);
+//$(document).load(function () {
+//    $(':text').blur(calculateAfterBlur);
+//    //$('#searchCategory').change(document.forms['searchCategoryForm'].submit());
+//});
+
+$(':input[type="number"]').blur(calculateAfterBlur);
 
 // calculate formula after blur (this function is meant to be assigned to an onblur event for input boxes.
 function calculateAfterBlur() {
@@ -104,18 +109,6 @@ function calculateAfterBlur() {
             $('#' + parentRef).blur();
         }
     }
-    // get closest div
-
-        // if div contains "topLevel" in id
-            //call formulas.js function based on div's name
-        // if div contains "children" in div id
-            // get all inputs in div
-            // if all inputs contain a number (! isNaN check)
-                // get div's hidden element's (h1 element) inner HTML (which is the parent id element)
-                // get function name from local storage where formulas id and name are stored as key-value pairs
-                // call formulas.js function
-        // else go up to next closest div and try again
-
 }
 
 function BodyMassIndex(kg, metersSquared) {

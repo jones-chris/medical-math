@@ -12,4 +12,5 @@ public interface FormulaService {
     List<Formula> findAll();
     List<Formula> findAllByCategory(Long categoryId);
     Map<String, String> findAllIDsAndNames();
+    List<Formula> findByName(String name);
 }

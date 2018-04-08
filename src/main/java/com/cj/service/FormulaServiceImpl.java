@@ -28,13 +28,33 @@ public class FormulaServiceImpl implements FormulaService {
 
     @Override
     public List<Formula> findAllByCategory(Long categoryId) {
-        return  formulaDao.findAllByCategory(categoryId);
+        //return  formulaDao.findAllByCategory(categoryId);
+        List<Formula> formulas = formulaDao.findAllByCategory(categoryId);
+
+        for (Formula formula : formulas) {
+            List<Formula> childFormulas = formulaDao.findAllChildFormulas(formula.getId());
+            formula.setChildFormulas(childFormulas);
+        }
+
+        return formulas;
     }
 
     @Override
     public Map<String, String> findAllIDsAndNames() {
         //return formulaDao.findAllParentFormulas();
         return formulaDao.findAllIDsAndNames();
+    }
+
+    @Override
+    public List<Formula> findByName(String name) {
+        List<Formula> formulas = formulaDao.findByName(name);
+
+        for (Formula formula : formulas) {
+            List<Formula> childFormulas = formulaDao.findAllChildFormulas(formula.getId());
+            formula.setChildFormulas(childFormulas);
+        }
+
+        return formulas;
     }
 
     @Override
