@@ -1,17 +1,22 @@
 package com.cj.model;
 
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     private String username;
     private String password;
-    private String[] roles;
-    private List<Long> favorites;
+    private List<String> roles = new ArrayList<>();
+    private List<Long> favorites = new ArrayList<>();
 
     public User() {}
 
-    public User(String username, String password, String[] roles, List<Long> favorites) {
+    public User(String username, String password, List<String> roles, List<Long> favorites) {
         this.username = username;
         this.password = password;
         this.roles = roles;
@@ -31,14 +36,14 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = PASSWORD_ENCODER.encode(password);
     }
 
-    public String[] getRoles() {
+    public List<String> getRoles() {
         return roles;
     }
 
-    public void setRoles(String[] roles) {
+    public void setRoles(List<String> roles) {
         this.roles = roles;
     }
 

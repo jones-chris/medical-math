@@ -1,9 +1,9 @@
-package com.cj.dao;
+package com.cj.service;
 
 
 import com.cj.model.User;
 
-public interface UserDao {
+public interface UserService {
     User findByUsername(String username);
     boolean add(User user);
     boolean updatePassword(User user);

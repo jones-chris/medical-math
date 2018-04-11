@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Login | My Recipes</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a th:href="${user != null ? '/profile' : '/login'}" th:text="${user != null ? user.username : 'log in'}">
+        Chandra S.
+    </a>
+    &bull;
+    <a href="/logout">
+        logout
+    </a>
+</nav>
+
+<div class="grid-container">
+
+    <div class="grid-100">
+        <a href="index.html">
+            <h1>
+                <br/>
+                My Recipes
+            </h1>
+        </a>
+    </div>
+
+    <p class="errors" th:text="${flash != null ? flash.message : null}"></p>
+    <form action="/login" method="post" th:object="${user}">
+        <div class="grid-100">
+            <div class="recipes">
+                <div class="prefix-20 grid-60 suffix-20">
+                    <p>
+                        <input placeholder="Username" th:field="*{username}"> </input>
+                    </p>
+                </div> <div class="clear"></div>
+                <div class="prefix-20 grid-60 suffix-20">
+                    <p>
+                        <input type="password" th:field="*{password}"> </input>
+                    </p>
+                </div> <div class="clear"></div>
+                <div class="prefix-20 grid-60 suffix-20">
+                    <p>
+                        <button type="submit">Login</button>
+                    </p>
+                </div> <div class="clear"></div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

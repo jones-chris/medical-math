@@ -16,9 +16,13 @@
         <a th:href="${user != null ? '/profile' : '/login'}" th:text="${user != null ? user.username : 'log in'}">
             Chandra S.
         </a>
-        &bull;
+         &bull;
         <a href="/logout">
             logout
+        </a>
+         &bull;
+        <a href="/signup">
+            sign up
         </a>
     </nav>
 

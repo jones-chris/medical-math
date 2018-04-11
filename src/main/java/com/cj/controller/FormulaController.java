@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,7 @@ public class FormulaController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getTopLevelFormulas(@RequestParam(value = "searchCategory", required = false, defaultValue = "") String categoryId,
                                       @RequestParam(value = "searchName", required = false, defaultValue = "") String name,
+                                      Principal principal,
                                       ModelMap modelMap) {
         List<Formula> formulas;
         if (! categoryId.equals("")) {
